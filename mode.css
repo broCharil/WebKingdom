@@ -1,0 +1,524 @@
+* {
+   padding: 0;
+   margin: 0;
+   font-family: noto serif;
+   box-sizing: border-box;
+   list-style: none;
+   text-decoration: none;
+   scroll-behavior: smooth;
+}
+
+/* CSS Variables untuk tema */
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --card-background: #f1f1f1;
+            --card-border: #dddddd;
+            --button-background: #4a90e2;
+            --button-text: white;
+            --theme-toggle-background: #eeeeee;
+            --theme-toggle-active: #4a90e2;
+            --theme-toggle-text: #333333;
+            --theme-toggle-bg-volume: #F8F9FA;
+            --theme-toggle-icon: #5F6266;
+        }
+
+        /* Dark Mode Theme */
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --card-background: #1e1e1e;
+            --card-border: #333333;
+            --button-background: #bb86fc;
+            --button-text: #121212;
+            --theme-toggle-background: #333333;
+            --theme-toggle-active: #bb86fc;
+            --theme-toggle-text: #e0e0e0;
+            --theme-toggle-bg-volume: #A5A9AE;
+            --theme-toggle-icon: #5F6266;
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .header {
+            position: fixed;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+           color: var(--theme-toggle-text);
+           text-decoration: none;
+           font-size: 35px;
+           margin: 0 3rem;
+           font-family: "Emilys Candy", serif;
+           font-weight: 400;
+        }
+        
+        span {
+           color: #B0323A;
+        }
+
+        .navbar a {
+            margin: 0 2rem;
+            color: var(--theme-toggle-text);
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        /* Theme toggle button styles */
+        .theme-toggle {
+            background-color: var(--theme-toggle-background);
+            color: var(--theme-toggle-text);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 20px;
+            margin: 0 3rem;
+            gap: 8px;
+            transition: all 0.3s ease;
+            
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.9;
+        }
+        
+        .king {
+           min-height: 100vh;
+           background-color: var(--theme-toggle-background);
+           display: grid;
+           align-items: center;
+           grid-template-columns: repeat(2,1fr);
+           
+        }
+        
+        .king .mahkota {
+           width: 10vw;
+           position: absolute;
+           /* transform: translate(-88%, 180%); */
+           animation: updown 3s infinite;
+           top: 18%;
+           left: -8%;
+        }
+        
+        .container-king {
+           font-size: 20px;
+           margin: 0 4rem;
+           border-bottom: 2px solid gainsboro;
+           padding-bottom: 2rem;
+        }
+        
+        .container-king h1 {
+           font-size: 50px;
+           font-family: "Cinzel", serif;
+           
+        }
+        
+        .container-king h3 {
+           font-size: 40px;
+           margin: 15px 0;
+           font-family: "Cinzel", serif;
+        }
+        
+        .container-king p {
+           font-size: 25px;
+           font-family: "Cormorant Garam ond", serif;
+        }
+        
+        /*  */
+        .king .sound-king {
+           position: absolute;
+           color: red;
+           left: 52rem;
+        }
+        
+        #volume-toggle {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 45px;
+           height: 45px;
+           font-size: 26px;
+           border-radius: 50%;
+           background-color: ghostwhite;
+           color: gray;
+        }
+        /*  */
+        
+        .king img {
+           top: 0;
+           margin-left: 9rem;
+           transform: translateY(3%);
+           width: 433px;
+           height: auto;
+        }
+        
+       .queen {
+           min-height: 100vh;
+           background-color: var(--background-color);
+           display: grid;
+           align-items: center;
+           grid-template-columns: repeat(2,1fr);
+        }
+        /*  */
+        .queen .sound-queen {
+           position: absolute;
+           left: 32rem;
+           top: 80rem;
+        }
+        
+        #volume-toggle-king,
+        #volume-toggle-queen,
+        #volume-toggle-princess,
+        #volume-toggle-sparta {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 45px;
+           height: 45px;
+           font-size: 26px;
+           border-radius: 50%;
+           background-color: var(--theme-toggle-bg-volume);
+           color: var(--theme-toggle-icon);
+        }
+        /*  */
+
+
+
+#bg-music-king,
+#bg-music-queen,
+#bg-music-princess,
+#bg-music-sparta {
+   display: none;
+}
+
+        
+        .queen img {
+           width: 368px;
+           transform: translateY(3%);
+           margin-left: 9rem;
+        }
+        
+        .container-queen {
+           margin: 0 4rem;
+           text-align: right;
+           
+        }
+        
+        .container-queen h1 {
+           font-size: 50px;
+           font-family: "Cinzel", serif;
+        }
+        
+        .container-queen h3 {
+           font-size: 40px;
+           margin: 15px 0;
+           font-family: "Cinzel", serif;
+        }
+        
+        .container-queen p {
+           font-size: 25px;
+           font-family: "Cormorant Garam ond", serif;
+           border-bottom: 2px solid gainsboro;
+           padding-bottom: 2rem;
+        }
+        
+        .putri {
+           min-height: 100vh;
+           background-color: var(--theme-toggle-background);
+           display: grid;
+           align-items: center;
+           grid-template-columns: repeat(2,1fr);
+        } 
+       
+        .container-putri {
+           font-size: 20px;
+           margin: 0 4rem;
+           border-bottom: 2px solid gainsboro;
+           padding-bottom: 2rem;
+        }
+        
+        .container-putri h1 {
+           font-size: 50px;
+           font-family: "Cinzel", serif;
+        }
+        
+        .container-putri h3 {
+           font-size: 40px;
+           margin: 15px 0;
+           font-family: "Cinzel", serif;
+        }
+        
+        .container-putri p {
+           font-size: 25px;
+           font-family: "Cormorant Garam ond", serif;
+        }
+       
+        .putri img {
+           top: 0;
+           margin-left: 9rem;
+           transform: translateY(5%);
+           width: 436px;
+           height: auto;
+        }
+        
+        .putri .sound-princess {
+           position: absolute;
+           left: 55rem;
+        }
+        
+        .sparta {
+           min-height: 100vh;
+           background-color: var(--background-color);
+           display: grid;
+           align-items: center;
+           grid-template-columns: repeat(2,1fr);
+        }
+        
+        .sparta .sound-sparta {
+           position: absolute;
+           left: 29rem;
+           /* right: 59rem; */
+           top: 161rem;
+           z-index: 2;
+        }
+        
+        .sparta img {
+           width: 439px;
+           margin-left: 9rem;
+           z-index: 1;
+        }
+        
+        .sparta .img1 {
+           width: 5vw;
+           animation: RotateAnimation1;
+           animation-timeline: view();   
+        }
+        
+         .sparta .img2 {
+           width: 5vw;
+           animation: RotateAnimation2;
+           animation-timeline: view();   
+        }
+        
+        .sparta .img3 {
+           width: 7vw;
+           position: absolute;
+           animation: RotateAnimation3;
+           animation-timeline: view();   
+        }
+        
+        .sparta .img4 {
+           width: 4vw;
+           position: absolute;
+           animation: RotateAnimation4;
+           animation-timeline: view();   
+        }
+        
+        .sparta .img5 {
+           width: 6vw;
+           position: absolute;
+           animation: RotateAnimation5;
+           animation-timeline: view();   
+        }
+        
+        .sparta .img6 {
+           width: 6vw;
+           position: absolute;
+           animation: RotateAnimation6;
+           animation-timeline: view();   
+        }
+        
+@keyframes RotateAnimation1 {
+    from {
+        transform: translate(-70%, 190%) rotate(0deg);
+    }
+    to {
+        transform: translate(-70%, 190%) rotate(455deg);
+        
+    }
+}
+
+@keyframes RotateAnimation2 {
+    from {
+        transform: translate(-428%, 350%) rotate(0deg);
+    }
+    to {
+        transform: translate(-428%, 350%) rotate(455deg);
+        
+    }
+}
+
+@keyframes RotateAnimation3 {
+    from {
+        transform: translate(-20%, -10%) rotate(0deg);
+    }
+    to {
+        transform: translate(-20%, -10%) rotate(455deg);
+        
+    }
+}
+
+@keyframes RotateAnimation4 {
+    from {
+        transform: translate(720%, 160%) rotate(0deg);
+    }
+    to {
+        transform: translate(720%, 160%) rotate(455deg);
+        
+    }
+}
+
+@keyframes RotateAnimation5 {
+    from {
+        transform: translate(-10%, 290%) rotate(0deg);
+    }
+    to {
+        transform: translate(-10%, 290%) rotate(455deg);
+        
+    }
+}
+
+@keyframes RotateAnimation6 {
+    from {
+        transform: translate(540%, 350%) rotate(0deg);
+    }
+    to {
+        transform: translate(540%, 350%) rotate(455deg);
+        
+    }
+}
+
+
+@keyframes updown {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+        .container-sparta {
+           margin: 0 4rem;
+           text-align: right;
+           border-bottom: 2px solid gainsboro;
+           padding-bottom: 2rem;
+        }
+        
+        .container-sparta h1 {
+           font-size: 50px;
+           font-family: "Cinzel", serif;
+        }
+        
+        .container-sparta h3 {
+           font-size: 40px;
+           margin: 15px 0;
+           font-family: "Cinzel", serif;
+        }
+        
+        .container-sparta p {
+           font-size: 25px;
+           font-family: "Cormorant Garam ond", serif;
+        }
+        
+       .footer {
+          min-height: 100vh;
+          background-color: var(--theme-toggle-background);
+          justify-content: center;
+          align-items: center;           
+          display: flex;
+          flex-direction: row;
+       }
+       
+       .footer .container-footer {
+          background-color: red;
+          border-radius: 50px;
+          padding: 240px 120px;
+          display: flex;
+       }
+       
+       .footer .footer-box {
+          background-color: blue;
+          
+       }
+       
+       .footer .footer-info {
+          
+       }
+       
+       .footer-info img {
+          width: 90%;
+          height: auto;
+          object-fit: cover;
+          
+       }
+      
+  /* .footer .container-footer {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap;
+    
+  }
+  
+  .footer .footer-box {
+    flex: 1;
+    min-width: 100px;
+    box-sizing: border-box; 
+    background-color: red;
+    height: 700px;
+    
+  }
+  
+  .footer .footer-info img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    align-items: center;
+  }  */
+
+       
+       
+       
+@media screen and (max-width: 1024px) {
+     .theme-toggle {
+        margin: 0 2rem;
+     }
+     
+     .king .mahkota {
+        top: 21%;
+        left: -11%;
+     }
+     
+     .queen img {
+        margin-left: 1rem;
+     }
+        
+     .sparta img {
+        transform: translate(-2%, 0);
+        margin-left: 3rem;
+        z-index: 1;
+     }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="in">
+<head>
+   <meta charset="UTF-8">
+   <title>Page title</title>
+   <link rel="stylesheet" href="mode.css">
+    
+    <!-- box icon -->
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     
+    <!-- google font -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Emilys+Candy&family=Goudy+Bookletter+1911&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+   
+</head>
+<body>
+   <nav class="header">
+       <a href="" class="logo">The<span>Kingdom</span></a>
+         <div class="navbar">
+           <a href="#king">King</a>
+           <a href="#queen">Queen</a>
+           <a href="#putri">Putri</a>
+           <a href="#sparta">Sparta</a>
+             <button id="theme-toggle" class="theme-toggle">
+               <span id="theme-icon">☀️</span>
+             </button>
+         </div> 
+   </nav>
+   
+   <!-- king -->
+   <main class="king" id="king">
+      <img src="mahkota.png" class="mahkota">
+      <div class="container-king">
+        <h1>The King</h1>
+          <h3>King of Kings</h3>
+            <p>Courage does not mean not having fear, but taking steps, even in fear.</p>
+      </div>
+      <img src="king.png">
+      
+      <div class="sound-king">
+         <a href="#" id="volume-toggle-king" data-audio="king-audio">
+        <i class='bx bx-volume-mute' ></i>
+        <i class='bx bx-volume-low' style="display:none"></i>
+         </a>
+      </div>
+      
+      <audio controls id="bg-music-king" loop>
+           <source src="king.mp3" type="audio/mpeg">
+      </audio>
+   </main>
+   
+   <!-- queen -->
+   <section class="queen" id="queen">
+      <div class="sound-queen">
+         <a href="#" id="volume-toggle-queen" data-audio="queen-audio">
+        <i class='bx bx-volume-mute' ></i>
+        <i class='bx bx-volume-low' style="display:none"></i>
+         </a>
+      </div>
+      
+      <img src="queen.png">
+        <div class="container-queen">
+          <h1>The Queen</h1>
+            <h3>Queen Consort</h3>
+              <p>What you don't change is your choice, if there is a part of your life that you complain about but you don't change it, it means you chose it.</p>
+        </div>
+        <audio controls id="bg-music-queen" loop>
+           <source src="queen.mp3" type="audio/mpeg">
+        </audio>
+   </section> 
+   
+   <!-- princess -->
+   <section class="putri" id="putri">
+        <div class="container-putri">
+          <h1>Princess Royale</h1>
+            <h3>Her Royal Highness The Princess Royal</h3>
+              <p>you don't have to be perfect to start, you just have to start to be perfect</p>
+        </div>
+        <img src="putri.png" class="putri-img">
+        
+         <div class="sound-princess">
+         <a href="#" id="volume-toggle-princess" data-audio="princess-audio">
+        <i class='bx bx-volume-mute' ></i>
+        <i class='bx bx-volume-low' style="display:none"></i>
+         </a>
+      </div>
+      
+      <audio controls id="bg-music-princess" loop>
+           <source src="princess royale.mp3" type="audio/mpeg">
+      </audio>
+      
+   </section>
+   
+   <!-- sparta -->
+   <section class="sparta" id="sparta"> 
+                  <img src="flower1.png" class="img1">
+                <img src="flower2.png" class="img2">     
+              <img src="flower2.png" class="img3">
+            <img src="flower1.png" class="img4">
+          <img src="flower3.png" class="img5">
+        <img src="flower4.png" class="img6">
+      <img src="sparta.png">
+        <div class="container-sparta">
+          <h1>The sparta</h1>
+            <h3>vetandor</h3>
+              <p>Sometimes limitations give rise to innovation</p>
+        </div>
+        
+        <div class="sound-sparta">
+         <a href="#" id="volume-toggle-sparta" data-audio="sparta-audio">
+        <i class='bx bx-volume-mute' ></i>
+        <i class='bx bx-volume-low' style="display:none"></i>
+         </a>
+      </div>
+      
+      <audio controls id="bg-music-sparta" loop>
+           <source src="sparta.mp3" type="audio/mpeg">
+        </audio>
+      
+   </section>
+   
+   
+   <!-- footer -->
+   <section class="footer">
+      <div class="container-footer">
+        <div class="footer-box">
+          <div class="footer-info">
+             <img src="img1.jpg" alt="">
+          </div>
+        </div>
+        
+        <div class="footer-box">
+          <div class="footer-info">
+             <img src="img2.jpg" alt="">
+          </div>
+        </div>
+        
+        <div class="footer-box">
+          <div class="footer-info">
+             <img src="img3.jpg" alt="">
+          </div>
+        </div>
+        
+        <div class="footer-box">
+          <div class="footer-info">
+             <img src="img4.jpg" alt="">
+          </div>
+        </div>
+        
+        <div class="footer-box">
+          <div class="footer-info">
+             <img src="img5.jpg" alt="">
+          </div>
+        </div>
+        
+      </div>
+   </section>
+   
+   
+   <script src="mode.js"></script>
+</body>
+</html>
